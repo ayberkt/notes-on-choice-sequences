@@ -61,13 +61,59 @@ yields the second axiom:
 \end{notation}
 
 \begin{notation}
-  $A\ \alpha$ denotes the assertion that we have a proof of $A$ for $\alpha$.
+  $n \preceq m \coloneqq \exists n.\ n * n' = m$
 \end{notation}
 
-Suppose that we are able to assert $A\ \alpha$. Since $\alpha$ is lawless
+\begin{notation}
+  $n \prec m \coloneqq n \preceq m \land n \neq m$
+\end{notation}
+
+\begin{notation}
+  We denote by $\length{s}$, the length function defined as follows:
+  \begin{align*}
+  \length{\seq{}} &= 0\\
+  \length{\seq{x_0, \dots, x_u}} &= u+1.
+  \end{align*}
+\end{notation}
+
+\begin{notation}
+  We denote by $(n)_x$ the inverse of sequence-coding i.e.,
+  if $n = \seq{x_0, \dots , x_u}$, then
+  \[ (n)_y =
+       \begin{cases}
+         x_y & \text{if}\ y \le u\\
+         0   & \text{otherwise}
+       \end{cases} \]
+\end{notation}
+
+\begin{notation}
+  $n \preceq m \coloneqq \exists n.\ n * n' = m$
+\end{notation}
+
+\begin{notation}
+  $A\alpha$ denotes the assertion that we have a proof of $A$ for $\alpha$.
+\end{notation}
+
+\begin{notation}
+  Given a sequence $a$, we denote by $\bar{a}n$ ``first $n$ elements of $a$''
+  i.e.,
+  \[ \bar{a}u = \begin{cases}
+      \seq{} & \text{if}\ u = 0\\
+      \seq{a_0, \dots, a_{u \dotdiv 1}} & \text{otherwise}
+      \end{cases} \]
+  where $\dotdiv$ is the monus operator.
+\end{notation}
+
+\begin{notation}
+  By $a \in n$ we denote that ``$n$ is a prefix of $a$''
+  \[ a \in n \coloneqq \bar{a}(\length{n}) = n \]
+\end{notation}
+
+Suppose that we are able to assert $A\alpha$. Since $\alpha$ is lawless
 sequence, at any stage we are in possesion only of a prefix of $\alpha$. This
-means that in asserting $A\ \alpha$ we did not make use of any information
-besides
+means that in asserting $A\alpha$ we did not make use of any information
+besides  $\alpha \in n$. So $A$ should hold for any lawless sequence $\beta$
+such that $\beta \in n$.
 
 \bibliographystyle{alpha}
 \bibliography{bibliography.bib}
