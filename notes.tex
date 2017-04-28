@@ -124,15 +124,42 @@ means that in asserting $A\alpha$ we did not make use of any information
 besides  $\alpha \in n$. So $A$ should hold for any lawless sequence $\beta$
 such that $\beta \in n$. We capture this idea through (\LSIII).
 \begin{equation}\label{LS3}
-  A(\alpha, \bar{\beta}) \land \neq(\alpha, \bar{\beta})
+  A(\alpha, \vec{\beta}) \land \neq(\alpha, \vec{\beta})
   \rightarrow \exists n.\ \alpha \in n \land
-  (\forall \gamma \in n.\ A(\gamma, \bar{\beta}))
+  (\forall \gamma \in n.\ A(\gamma, \vec{\beta}))
   \tag{\LSIII}
 \end{equation}
 The reason for the requirement of $\neq(\alpha, \beta_1, \dots, \beta_n)$ is
 to make precise that sequences whose prefixes we are in possession of are
 \emph{distinguishable}. Each process has a distinct identity as a process---as
 Troelstra \cite[pg. 11]{troelstra-choice-sequence} calls: its ``individuality''.
+
+\subsection{Continuity schemata}
+
+When could a truth of a statement of the form
+$\forall \alpha.\ \exists n.\ A(\alpha, n)$ be established? Again, by the
+nature of a lawless sequences the choice of $n \in \nat$ for which
+$A(\alpha, n)$ has to be made \emph{at a point in time} at which we are in
+possession of knowledge about a prefix of $\alpha$; we do not know how
+$\alpha$ will proceed \emph{in time}.
+
+Let us denote by $\ContLS$ the class of \emph{lawlike} operations on lawless
+sequences. We express continuity by the following axiom:
+\begin{equation}\label{eq:contintuity}
+  \forall \alpha.\ \exists x \in \nat.\ A(\alpha, x) \rightarrow \exists
+  \Gamma \in \ContLS.\ \forall \alpha.\ A(\alpha, \Gamma\alpha)
+  \tag{Continuity}
+\end{equation}
+
+\ref{eq:continuity} also leads to an intuitionistic interpretation of the
+``axiom of choice'', what we will call \emph{the selection principle}:
+\begin{equation}\label{eq:SP}
+  \forall \alpha. \exists x \in nat.\ A(\alpha, x)
+  \rightarrow \exists \Psi.\ \forall \alpha.\ A(\alpha, \Psi\alpha)
+  \tag{SP}
+\end{equation}
+
+\LSIII
 
 \bibliographystyle{alpha}
 \bibliography{bibliography.bib}
