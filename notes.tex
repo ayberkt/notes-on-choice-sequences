@@ -109,11 +109,32 @@ yields the second axiom:
   \[ a \in n \coloneqq \bar{a}(\length{n}) = n \]
 \end{notation}
 
+\begin{notation}
+  \begin{align*}
+  \neq(\alpha, \beta_1, \dots, \beta_n) \qquad &\coloneqq \qquad
+    \bigwedge_{i=1}^{n} \alpha \neq B_i\\
+  \#(\beta_0, \dots, \beta_n) \qquad &\coloneqq \qquad
+    \bigwedge_{i=0}^n \bigwedge_{j=0}^n i \neq j \rightarrow \beta_i \neq \beta_j
+  \end{align*}
+\end{notation}
+
 Suppose that we are able to assert $A\alpha$. Since $\alpha$ is lawless
 sequence, at any stage we are in possesion only of a prefix of $\alpha$. This
 means that in asserting $A\alpha$ we did not make use of any information
 besides  $\alpha \in n$. So $A$ should hold for any lawless sequence $\beta$
-such that $\beta \in n$.
+such that $\beta \in n$. We capture this idea through (\ref{LS3}).
+\begin{equation}\label{LS3}
+  A(\alpha, \bar{\beta}) \land \neq(\alpha, \bar{\beta})
+  \rightarrow \exists n.\ \alpha \in n \land
+  (\forall \gamma \in n.\ A(\gamma, \bar{\beta}))
+  \tag{LS3}
+\end{equation}
+
+% \begin{equation}\label{eq:open-data}
+%     A\alpha \rightarrow \exists n.\ \alpha \in n \land
+%       (\forall \beta \in n.\ A\beta)
+%     \tag{OD}
+% \end{equation}
 
 \bibliographystyle{alpha}
 \bibliography{bibliography.bib}
