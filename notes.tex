@@ -122,19 +122,17 @@ Suppose that we are able to assert $A\alpha$. Since $\alpha$ is lawless
 sequence, at any stage we are in possesion only of a prefix of $\alpha$. This
 means that in asserting $A\alpha$ we did not make use of any information
 besides  $\alpha \in n$. So $A$ should hold for any lawless sequence $\beta$
-such that $\beta \in n$. We capture this idea through (\ref{LS3}).
+such that $\beta \in n$. We capture this idea through (\LSIII).
 \begin{equation}\label{LS3}
   A(\alpha, \bar{\beta}) \land \neq(\alpha, \bar{\beta})
   \rightarrow \exists n.\ \alpha \in n \land
   (\forall \gamma \in n.\ A(\gamma, \bar{\beta}))
-  \tag{LS3}
+  \tag{\LSIII}
 \end{equation}
-
-% \begin{equation}\label{eq:open-data}
-%     A\alpha \rightarrow \exists n.\ \alpha \in n \land
-%       (\forall \beta \in n.\ A\beta)
-%     \tag{OD}
-% \end{equation}
+The reason for the requirement of $\neq(\alpha, \beta_1, \dots, \beta_n)$ is
+to make precise that sequences whose prefixes we are in possession of are
+\emph{distinguishable}. Each process has a distinct identity as a process---as
+Troelstra \cite[pg. 11]{troelstra-choice-sequence} calls: its ``individuality''.
 
 \bibliographystyle{alpha}
 \bibliography{bibliography.bib}
