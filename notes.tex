@@ -143,23 +143,55 @@ $A(\alpha, n)$ has to be made \emph{at a point in time} at which we are in
 possession of knowledge about a prefix of $\alpha$; we do not know how
 $\alpha$ will proceed \emph{in time}.
 
+\begin{notation}
+  By $\ContLS$ we denote the class of \emph{lawlike operations} on lawless
+  sequences i.e.,
+  \[ \Gamma \in \ContLS \iff
+      \forall \alpha.\ \exists x.\ \forall \beta \in \bar{\alpha}x.
+      \ \Gamma\alpha = \Gamma\beta \]
+\end{notation}
+
 Let us denote by $\ContLS$ the class of \emph{lawlike} operations on lawless
 sequences. We express continuity by the following axiom:
-\begin{equation}\label{eq:contintuity}
+\begin{equation}\label{eq:continuity}
   \forall \alpha.\ \exists x \in \nat.\ A(\alpha, x) \rightarrow \exists
   \Gamma \in \ContLS.\ \forall \alpha.\ A(\alpha, \Gamma\alpha)
-  \tag{Continuity}
+  \tag{CP}
 \end{equation}
 
 \ref{eq:continuity} also leads to an intuitionistic interpretation of the
 ``axiom of choice'', what we will call \emph{the selection principle}:
 \begin{equation}\label{eq:SP}
-  \forall \alpha. \exists x \in nat.\ A(\alpha, x)
+  \forall \alpha. \exists x \in \nat.\ A(\alpha, x)
   \rightarrow \exists \Psi.\ \forall \alpha.\ A(\alpha, \Psi\alpha)
   \tag{SP}
 \end{equation}
+In fact \ref{eq:continuity} is implied by the combination of \ref{eq:SP} and
+\LSIII.
+following which implies that $\Psi \in \ContLS$.
+\begin{equation*}
+\Psi\alpha = x \rightarrow (\exists n.\ \alpha \in n) \land
+    (\forall \gamma \in n.\ \Psi\gamma = x) \tag{by \LSIII}
+\end{equation*}
 
-\LSIII
+How about sequences for which at a stage more information that its initial
+segment we are in possession of? In this case, it is possible that
+$\alpha = \beta$ but not $\Psi\alpha = \Psi\beta$ i.e., it becomes possible
+that $\Psi$ is not \emph{deterministic}.
+\vspace{1em}
+\todo[color=SpringGreen, inline]{Review some of the stuff in between.}
+
+\section{``Brouwer's dogma''}
+
+Let $\Phi, \Phi', \dots$ stand for functionals from sequences to numbers i.e.,
+of type $\nat^\nat \rightarrow \nat$. We define $\Phi_n$ as:
+\[ \Phi_n(\xi) = \Phi(n * \xi) \]
+Now we inductively define the class of functionals
+\begin{itemize}
+  \item $\lambda \xi.\ n \in \Ind$,
+  \item if $\Phi^0, \Phi^1, \dots \in \Ind$ then
+  $\Phi(\alpha) = \Phi^{(\alpha0)}(\lambda x.\ \alpha(x+1))$.
+\end{itemize}
 
 \bibliographystyle{alpha}
 \bibliography{bibliography.bib}
